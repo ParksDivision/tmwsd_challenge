@@ -15,4 +15,4 @@ html
       input.btn.btn-primary(type='submit', value='Submit')
     ul
       each message, i in messages
-        li= message.subject
+        a(href=`/messages/${message.id}`): li= message.subject

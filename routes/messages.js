@@ -32,6 +32,13 @@ router.post('/messages/add', (req, res) => {
     }
   });
 
+
+// Retrieves a single message, routes User to view page with message diplayed
+// deletes message in DB after routing
+router.get('/messages/', (req, res) => {
+  
+});
+
 });
 
 module.exports = router
