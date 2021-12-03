@@ -22,7 +22,7 @@ Complete the following requirements by using any database engine of your choice.
 - [x] As a user, I should see a list of links for all created messages below the 'new message' form on the homepage.
 - [x] As a user, when I click a link in the message list, I should be able to view the message at a unique URL.
 - [x] As a user, when I open a message, the message should self-destruct (delete from the database).
-- [ ] As a user, I should no longer see messages on the homepage that have been viewed.
+- [x] As a user, I should no longer see messages on the homepage that have been viewed.
 
 Bonus points for making it look pretty :sparkles:
 
