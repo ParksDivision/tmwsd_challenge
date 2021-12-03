@@ -1,0 +1,92 @@
+
+body {
+  background: -webkit-linear-gradient(left, #6acaaa, #4578b3);
+}
+
+.container form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  justify-items: flex-start;
+}
+
+.btn {
+  border-radius: 15%;
+  background-color: navajowhite;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.form-control {
+  margin-bottom: 8px;
+}
+
+.container-list {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+ul li {
+  list-style: none;
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 8px;
+}
+
+ul li:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  height: 20px;
+  width: 20px;
+  background-size: contain;
+  background-image: url("https://freesvg.org/img/Anonymous-aiga-mail.png");
+}
+
+label {
+  font-weight: bold;
+  font-size: large;
+  font-style: italic;
+  padding-bottom: 8px;
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  color: crimson;
+}
+
+h4 {
+  font-style: italic;
+}
+
+.message-card {
+  width: 50%;
+  background-color: rgb(170, 180, 184);
+  border: black 1px solid;
+  text-align: center;
+}
+
+

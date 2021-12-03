@@ -1,55 +1,19 @@
-var express = require('express')
-var router = express.Router()
-let Message = require('../models/messages');
+const express = require('express')
+const router = express.Router()
+const controllers = require('../controllers.js/messages');
 
 
-// Retrieves all messages in DB, renders on homepage
-router.get('/', (req, res) => {
-  Message.find({}, function(err, messages) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('messages/index', {
-        messages: messages
-      });
-    }
-  });
-});
+// Retrieves all messages in DB, renders on homepage (via controller funct.)
+router.get('/', controllers.getAllMessages);
 
 
-// Adds new message to DB 
-router.post('/messages/add', (req, res) => {
-  let msg = new Message();
-  msg.subject = req.body.subject;
-  msg.body = req.body.body;
-  
-  msg.save((err) => {
-    if (err) {
-      console.log(err);
-      return;
-    } else {
-      res.redirect('/')
-    }
-  });
+// Adds new message to DB (via controller funct.)
+router.post('/messages/add', controllers.postNewMessage);
 
 
-// Retrieves a single message, routes User to message details page
-// deletes message in DB after routing
-router.get('/messages/detail/:message_id', (req, res) => {
-  let id = req.params.message_id;
+// Retrieves a single message, renders unique message details page
+// deletes message in DB after render (via controller funct.)
+router.get('/messages/detail/:message_id', controllers.getSingleMessage);
 
-  Message.findOneAndDelete({_id: id}, (err, message) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('messages/detail', {
-        message: message
-      });
-    }
-  });
-});
-
-
-});
 
 module.exports = router

@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-// Tell Express to use controllers brough in at top of file 
+// Tell Express to use routes + controllers brought in at top of file 
 app.use('/', messagesRoute)
 
 

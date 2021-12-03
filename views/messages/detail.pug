@@ -2,6 +2,14 @@ doctype html
 html 
   head 
     title Message Details
+    style
+      include styles.css
   body 
-    h2 #{message.subject}
-    p #{message.body}
+    h1 The Following Message Has Been Destroyed...
+    .message-container
+      .message-card
+        h4 Subject:
+        h2 #{message.subject}
+        br
+        h4 Body:
+        p #{message.body}

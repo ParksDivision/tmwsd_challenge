@@ -2,17 +2,20 @@ doctype html
 html 
   head 
     title TMWSD Challenge 
+    style
+      include styles.css 
   body 
-    h1 This Message Will Self Destruct!
-    form(method='POST', action='/messages/add')
-      #form-group
-        label Subject: 
-        input.form-control(name='subject', type='text')
-        br
-      #form-group 
-        label Body: 
-        textarea.form-control(name='body')
-      input.btn.btn-primary(type='submit', value='Submit')
-    ul
-      each message, i in messages
-        a(href=`/messages/detail/${message._id}`): li= message.subject
+      h1 This Message Will Self Destruct!
+      .container
+          form(method='POST', action='/messages/add')
+            label Subject:
+              br
+              input.form-control(name='subject', type='text', style="width: 350px;")
+            label Body:
+              br
+              textarea.form-control(name='body', style="max-width: 350px; min-width: 350px; height: 175px;", placeholder="Enter your message here...")
+            input.btn(type='submit', value='Submit')
+      .container-list
+        ul
+          each message, i in messages
+            a(href=`/messages/detail/${message._id}`): li= message.subject
