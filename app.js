@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const app = express();
 const port = 3000;
-
 const messagesRoute = require('./routes/messages');
 
+
+// MongoDB database setup and error Handling
 mongoose.connect('mongodb://localhost/tmwsd');
 
-// MongoDB Database Setup and Error Catching
 let db = mongoose.connection;
 
 db.once('open', function() {
