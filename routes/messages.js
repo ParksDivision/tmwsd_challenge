@@ -35,9 +35,20 @@ router.post('/messages/add', (req, res) => {
 
 // Retrieves a single message, routes User to view page with message diplayed
 // deletes message in DB after routing
-router.get('/messages/', (req, res) => {
-  
+router.get('/messages/detail/:message_id', (req, res) => {
+  let id = req.params.message_id;
+
+  Message.findOne({_id: id}, (err, message) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('messages/detail', {
+        message: message
+      });
+    }
+  });
 });
+
 
 });
 
